@@ -285,8 +285,8 @@ public class Main {
         System.out.println("¿Número del casillero?");
         int num = Integer.parseInt(br.readLine());
 
-        Producto producto = casilleros.despachar(num);
-
+        Producto producto = (Producto) casilleros.despachar(num);
+ 
         if (producto == null) {
             System.out.println("El casillero con número " + num + " no contiene ningún producto o el casillero no existe, revise el estado de los casilleros");
         } else {

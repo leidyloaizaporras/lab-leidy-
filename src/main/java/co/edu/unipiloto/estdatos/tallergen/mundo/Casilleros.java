@@ -3,12 +3,12 @@ package co.edu.unipiloto.estdatos.tallergen.mundo;
 public class Casilleros <T> {
 
 	private Casillero <T> c1;
-	private Casillero c2;
+	private Casillero <T>c2;
 
 	public Casilleros()
 	{
 		c1=new Casillero<>();
-		c2=new Casillero();
+		c2=new Casillero<>();
 
 	}
 
@@ -22,13 +22,13 @@ public class Casilleros <T> {
 		}
 		else if(c2.estaDesocupado())
 		{
-			c2.agregar((Producto) t);
+			c2.agregar( t);
 			return 2;
 		}
 		return -1;
 	}
 
-	public Producto despachar(int num) {
+	public T despachar(int num) {
 
 		switch(num)
 		{
