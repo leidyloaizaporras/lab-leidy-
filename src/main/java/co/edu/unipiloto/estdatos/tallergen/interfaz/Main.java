@@ -7,11 +7,13 @@ package co.edu.unipiloto.estdatos.tallergen.interfaz;
 import java.io.BufferedReader;
 
 import java.io.InputStreamReader;
-
+import java.util.Scanner;
+import co.edu.unipiloto.estdatos.tallergen.mundo.ComputadorL;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Camisa;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Casilleros;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Celular;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Celular.Operador;
+import co.edu.unipiloto.estdatos.tallergen.mundo.Electronico;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Electronico.Gama;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Producto;
 import co.edu.unipiloto.estdatos.tallergen.mundo.Vestuario.Talla;
@@ -92,7 +94,8 @@ public class Main {
         System.out.println("<< Agregar producto >>\n");
         String mensaje = "[1] Camisa\n"
                 + "[2] Celular\n"
-                + "[3] Computador\n";
+                + "[3] Computador\n"
+                + "[4] Productos\n";
         System.out.print(mensaje);
         String op2 = br.readLine();
         switch (op2) {
@@ -105,10 +108,12 @@ public class Main {
             case "3":
                 agregarComputador();
                 break;
+            case "4":
+                //agregarProductos();
+                break;
 
         }
     }
-
     /**
      * Menú para agregar un celular
      *
@@ -166,21 +171,15 @@ public class Main {
         System.out.println("<< Agregar camisa >>\n");
         System.out.println("¿Marca?");
 
-        //TODO Modificar según la guía de laboratorio
-        System.out.println("[1] " + Camisa.MARCA_GEF);
-        System.out.println("[2] " + Camisa.MARCA_NAUTICA);
-        System.out.println("[3] " + Camisa.MARCA_POLO);
+        //Se modifico según la guía de laboratorio
+        Camisa.Marca[] marcasCamisas = Camisa.Marca.values();
 
+        for (int i = 0; i < marcasCamisas.length; i++) {
+            System.out.println("[" + (i + 1) + "] " + marcasCamisas[i]);
+        }
         int indice = Integer.parseInt(br.readLine());
 
-        String marca = "";
-        if (indice == 1) {
-            marca = Camisa.MARCA_GEF;
-        } else if (indice == 2) {
-            marca = Camisa.MARCA_NAUTICA;
-        } else if (indice == 3) {
-            marca = Camisa.MARCA_POLO;
-        }
+        Camisa.Marca marca = marcasCamisas[indice - 1];
 
         System.out.println("¿Talla?");
 
@@ -217,16 +216,69 @@ public class Main {
      * @throws Exception
      */
     public void agregarComputador() throws Exception {
-        System.out.println("TODO");
-        menuInicial();
-    }
+        //Precios de los compuatdores 
+        System.out.println("¿Cual es el precio del pc?");
+        Scanner sc = new Scanner(System.in);
+        double precio = sc.nextDouble();
+        //Gamas computadores (Electronico)
+        int gamaL = sc.nextInt();
 
-    /**
-     * Menú para sacar un producto de los casilleros
-     *
-     * @throws Exception
-     */
-    public void sacarProducto() throws Exception {
+        Electronico.Gama gamaComputadores;
+        switch (gamaL) {
+            case 1:
+                gamaComputadores = Electronico.Gama.ALTA;
+                break;
+            case 2:
+                gamaComputadores = Electronico.Gama.MEDIA;
+                break;
+            case 3:
+                gamaComputadores = Electronico.Gama.BAJA;
+                break;
+            default:
+                throw new IllegalArgumentException("no válido");
+
+            //Tipos de sistemas operativos 
+       
+        }  System.out.println("Sistema operativo del computador:");
+        System.out.println("1. MacOS");
+        System.out.println("2. Linux");
+        System.out.println("3. Solaris");
+        System.out.println("4.Unix ");
+        System.out.println("5. FreeBSD");
+
+        int sistema = sc.nextInt();
+
+        ComputadorL.SistemaOL sistemaOperativo;
+        switch (sistema) {
+            case 1:
+                sistemaOperativo = ComputadorL.SistemaOL.MacOS;
+                break;
+            case 2:
+                sistemaOperativo = ComputadorL.SistemaOL.Linux;
+                break;
+            case 3:
+                sistemaOperativo = ComputadorL.SistemaOL.Solaris;
+                break;
+            case 4:
+                sistemaOperativo = ComputadorL.SistemaOL.FreeBSD;
+            case 5:
+                sistemaOperativo = ComputadorL.SistemaOL.Unix;
+            default:
+                throw new IllegalArgumentException("Opción no valida");
+
+        }
+                    ComputadorL computador = new ComputadorL(sistemaOperativo, precio, gamaComputadores);
+                    menuInicial();
+                }
+
+            /**
+             * Menú para sacar un producto de los casilleros
+             *
+             * @throws Exception
+             */
+        
+
+        public void sacarProducto() throws Exception {
         System.out.println("* * * * * * * * * * * * * * * * ");
         System.out.println("<< Despachar producto >>\n");
 
