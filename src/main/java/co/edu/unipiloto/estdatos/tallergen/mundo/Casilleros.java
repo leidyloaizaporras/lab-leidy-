@@ -17,7 +17,7 @@ public class Casilleros <T> {
 
 		if(c1.estaDesocupado())
 		{
-		 	c1.agregar(t);
+		  	c1.agregar(t);
 			return 1;
 		}
 		else if(c2.estaDesocupado())

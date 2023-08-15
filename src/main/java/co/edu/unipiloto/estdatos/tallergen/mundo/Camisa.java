@@ -5,14 +5,14 @@ public class Camisa extends Vestuario {
 
     private Marca marca;
 
-    public enum Marca { 
+    public enum Marca {  
         GEF, POLO, NAUTICA
     }
 
     public Camisa(Marca pMarca, Talla pTalla, double pPrecio) {
         super(pTalla, pPrecio);
         marca = pMarca;
-    }
+    }          
 
     public String toString() {
         return "Camisa " + marca + " Talla " + talla + "($ " + precio + ")";
