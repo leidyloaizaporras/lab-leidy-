@@ -17,7 +17,7 @@ public class ComputadorL extends Electronico {
     }
     private SistemaOL sistemaOperativo;
 
-    public ComputadorL(SistemaOL sistemOp,double pPrecio,Gama pGama  ) {
+    public ComputadorL(SistemaOL sistemOp,double pPrecio,Gama pGama   ) {
         super(pGama, pPrecio);
         sistemaOperativo = sistemOp;
     }
