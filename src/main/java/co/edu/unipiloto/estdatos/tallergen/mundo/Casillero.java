@@ -7,7 +7,7 @@ public class Casillero <T>{
     public Casillero(T dato) {
         this.dato = dato;
     }
-   
+    
     Casillero() {
     }
 

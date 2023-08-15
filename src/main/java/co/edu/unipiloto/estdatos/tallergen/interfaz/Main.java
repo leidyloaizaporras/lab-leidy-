@@ -209,7 +209,7 @@ public class Main {
         menuInicial();
  
     } 
- 
+  
     /**
      * Menú para agregar un computador a los casilleros
      *

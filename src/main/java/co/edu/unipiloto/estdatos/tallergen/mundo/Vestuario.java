@@ -16,4 +16,4 @@ public class Vestuario extends Producto{
 		
 	}
 
-} 
+}  

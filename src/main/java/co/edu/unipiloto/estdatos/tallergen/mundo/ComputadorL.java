@@ -22,3 +22,4 @@ public class ComputadorL extends Electronico {
         sistemaOperativo = sistemOp;
     }
 }
+ 
