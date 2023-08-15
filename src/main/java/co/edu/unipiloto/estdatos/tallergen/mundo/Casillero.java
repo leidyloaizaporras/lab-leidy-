@@ -20,18 +20,18 @@ public class Casillero <T>{
         return false;
     }
 
-    public Producto darProducto() {
-        return (Producto) dato;
+    public T darProducto() {
+        return (T) dato;
     }
 
-    public Producto despachar() {
+    public T despachar() {
         if (dato == null) {
-            return (Producto) dato;
+            return dato;
         }
 
         T nObjeto = dato;
         dato = null;
-        return (Producto) nObjeto;
+        return nObjeto;
     }
 
     public boolean estaDesocupado() {
