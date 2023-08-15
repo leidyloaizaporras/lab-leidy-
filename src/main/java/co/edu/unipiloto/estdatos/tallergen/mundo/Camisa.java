@@ -5,7 +5,7 @@ public class Camisa extends Vestuario {
 
     private Marca marca;
 
-    public enum Marca {
+    public enum Marca { 
         GEF, POLO, NAUTICA
     }
 

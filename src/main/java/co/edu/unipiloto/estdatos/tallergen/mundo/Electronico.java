@@ -8,7 +8,7 @@ public class Electronico extends Producto{
 		ALTA, MEDIA, BAJA
 	}
 	
-	protected Gama gama;
+	protected  Gama gama;
 	
 	public Electronico(Gama pGama,double pPrecio)
 	{

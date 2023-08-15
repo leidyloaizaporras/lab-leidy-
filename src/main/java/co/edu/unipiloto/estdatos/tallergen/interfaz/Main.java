@@ -208,7 +208,7 @@ public class Main {
         System.out.println(" ");
         menuInicial();
 
-    }
+    } 
 
     /**
      * Menú para agregar un computador a los casilleros

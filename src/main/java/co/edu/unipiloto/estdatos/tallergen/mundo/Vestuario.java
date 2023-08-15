@@ -1,4 +1,4 @@
-package co.edu.unipiloto.estdatos.tallergen.mundo;
+ package co.edu.unipiloto.estdatos.tallergen.mundo;
 
 public class Vestuario extends Producto{
 	
